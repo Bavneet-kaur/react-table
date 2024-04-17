@@ -21,7 +21,7 @@ function GlobalFilter({
 
   return (
     <span>
-      Search:{" "}
+      Search:
       <input
         value={value || ""}
         onChange={(e) => {
@@ -30,7 +30,7 @@ function GlobalFilter({
         }}
         placeholder={`${count} records...`}
         style={{
-          fontSize: "1.1rem",
+          fontSize: "2rem",
           border: "0",
         }}
       />
@@ -50,6 +50,9 @@ function DefaultColumnFilter({
         setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
       }}
       placeholder={`Search ${count} records...`}
+      style={{
+        color: "black",
+      }}
     />
   );
 }
@@ -84,16 +87,17 @@ function FilteredTable() {
     useSortBy
   );
   return (
-    <div className="table">
-      <table {...getTableProps()} style={{ border: "solid 1px black" }}>
-        <thead>
+    <>
+      <table className="table-fixed" {...getTableProps()}>
+        <thead className="text-4xl text-gray-700 uppercase bg-teal-600 dark:bg-teal-600 dark:text-gray-800">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((columns) => (
                 <th
+                  className="border border-gray-600"
                   {...columns.getHeaderProps(columns.getSortByToggleProps())}
                   style={{
-                    borderBottom: "solid 3px red",
+                    borderBottom: "solid 5px red",
                     color: "white",
                   }}
                 >
@@ -110,13 +114,14 @@ function FilteredTable() {
                 colSpan={visibleColumns.length}
                 style={{
                   textAlign: "center",
+                  color: "black",
                 }}
               >
-                <GlobalFilter
+                {/* <GlobalFilter
                   preGlobalFilteredRows={preGlobalFilteredRows}
                   globalFilter={state.globalFilter}
                   setGlobalFilter={setGlobalFilter}
-                />
+                /> */}
               </th>
             </tr>
           ))}
@@ -126,13 +131,16 @@ function FilteredTable() {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr
+                className="hover:bg-gray-50 dark:hover:bg-orange-100"
+                {...row.getRowProps()}
+              >
                 {row.cells.map((cell) => {
                   return (
                     <td
                       {...cell.getCellProps()}
                       style={{
-                        padding: "10px",
+                        padding: "9px",
                         border: "solid 1px gray",
                       }}
                     >
@@ -145,7 +153,7 @@ function FilteredTable() {
           })}
         </tbody>
       </table>
-    </div>
+    </>
   );
 }
 

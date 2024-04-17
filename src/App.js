@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { Component } from "react";
 import FilteredTable from "./Components/FilteredTable";
 // import FilterTable from "./Components/FilterTable";
