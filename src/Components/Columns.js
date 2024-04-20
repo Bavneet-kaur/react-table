@@ -1,23 +1,24 @@
 export const COLUMNS = [
   {
-    Header: "CD Rank",
+    Header: "",
     Footer: "CD Rank",
     Justify: "center",
     accessor: "id",
+
     Cell: ({ row }) => {
       return (
-        <p className="text-4xl text-center font-sans font-bold text-stone-900">
+        <p className="text-3xl text-center font-sans font-bold text-stone-900">
           {row.original.id}
         </p>
       );
     },
     disableFilters: true,
   },
+
   {
     Header: "Colleges",
     Footer: "Colleges",
     accessor: "collegeName",
-    id: "college",
     Cell: ({ row }) => {
       return (
         <div className="relative flex w-full max-w-[80rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
@@ -25,22 +26,42 @@ export const COLUMNS = [
             <img
               src="https://static.thenounproject.com/png/213486-200.png"
               alt={row.original.collegeName}
-              className="relative inline-block h-[180px] w-[180px]  object-cover object-center"
+              className="relative inline-block h-[160px] w-[150px]  object-cover object-center"
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <h3 className="block font-sans text-4xl antialiased font-semibold leading-snug tracking-wide text-teal-600">
+                <h3 className="block font-sans text-4xl antialiased font-bold leading-snug tracking-wide text-teal-600">
                   {row.original.collegeName}
                 </h3>
               </div>
-              <p className="block font-sans text-3xl antialiased font-extralight leading-normal text-blue-gray-900">
-                {row.original.collegeAddress}
-              </p>
+              <div className="inline-flex space-x-48">
+                <p className="font-sans text-2xl antialiased font-extralight leading-normal text-blue-gray-900">
+                  {row.original.collegeAddress}
+                </p>
+                <span className="flex">
+                  {row.original.feature === true ? (
+                    <button
+                      type="button"
+                      className="text-white text-xl bg-rose-500 dark:bg-rose-400 place-items-end cursor-not-allowed font-semibold rounded-lg py-2 px-3 text-center"
+                      disabled
+                    >
+                      Featured
+                    </button>
+                  ) : (
+                    <span style={{ color: "red" }}></span>
+                  )}
+                  {/* Add badge here */}
+                  {row.value === true && (
+                    <span className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300"></span>
+                  )}
+                </span>
+              </div>
             </div>
           </div>
 
+          <br />
           <div className="block align-baseline ">
-            <ul className="flex flex-wrap space-x-12 text-3xl dark:text-gray-700">
+            <ul className="flex flex-wrap space-x-12 text-2xl dark:text-gray-700">
               <li>
                 <a
                   href="#"
@@ -103,21 +124,22 @@ export const COLUMNS = [
     Header: "Course Fee",
     Footer: "Course fee",
     accessor: "courseFee",
+
     Cell: function Fee({ row }) {
       return (
-        <div className="relative flex justify-evenly w-full max-w-[28rem] flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <p className="inline-flex place-content-start font-sans text-4xl antialiased font-semibold leading-snug tracking-wide text-teal-600">
+        <div className="relative flex justify-evenly w-full max-w-[24rem] flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
+          <p className="inline-flex place-content-start font-sans text-3xl antialiased font-bold leading-snug tracking-wide text-teal-600">
             {row.original.courseFee}
           </p>
-          <p className="text-stone-500 text-3xl">{row.original.subject}</p>
-          <p className="text-stone-500 text-3xl">- 1st year Fee</p>
+          <p className="text-stone-500 text-2xl">{row.original.subject}</p>
+          <p className="text-stone-500 text-2xl">- 1st year Fee</p>
           <br />
           <a
             href="#"
-            className="inline-flex me-4  md:me-6  align-baseline text-3xl text-amber-500"
+            className="inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500"
           >
             <svg
-              class="h-10 w-10 text-amber-500"
+              class="h-7 w-9 text-amber-500"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -144,18 +166,18 @@ export const COLUMNS = [
     Header: "Placements",
     Footer: "Placements",
     accessor: "placementRate",
-    id: "placements",
+
     Cell: function placement({ row }) {
       return (
         <div className="relative flex justify-evenly w-full max-w-[24rem] flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <p className="inline-flex text-teal-600 text-4xl font-sans font-semibold">
+          <p className="inline-flex text-teal-600 text-3xl font-sans font-bold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="red"
-              className="w-10 h-9"
+              className="w-9 h-7"
             >
               <path
                 strokeLinecap="round"
@@ -171,20 +193,20 @@ export const COLUMNS = [
 
             {row.original.maxiSalary}
           </p>
-          <p className="text-stone-500 text-3xl">Maximum Salary</p>
+          <p className="text-stone-500 text-2xl"> Maximum Salary</p>
 
-          <p className="text-indigo-800 text-3xl">
+          <p className="text-indigo-400 text-center font-inter font-bold text-2xl">
             <b>Placement Rate - {row.original.placementRate}%</b>
           </p>
 
-          <p className="inline-flex text-teal-600 text-4xl font-sans font-semibold">
+          <p className="inline-flex text-teal-600 text-3xl font-sans font-bold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="red"
-              className="w-10 h-9"
+              className="w-9 h-7"
             >
               <path
                 strokeLinecap="round"
@@ -195,14 +217,14 @@ export const COLUMNS = [
 
             {row.original.miniSalary}
           </p>
-          <p className="text-stone-500 text-3xl">Minimum Salary</p>
-
+          <p className="text-stone-500 text-2xl">Minimum Salary</p>
+          <br />
           <a
             href="#"
-            className=" inline-flex me-4  md:me-6  align-baseline text-3xl text-amber-500"
+            className=" inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500"
           >
             <svg
-              class="h-9 w-9 text-amber-500"
+              class="h-7 w-9 text-amber-500"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -229,11 +251,10 @@ export const COLUMNS = [
     Header: "User Reviews",
     Footer: "User Reviews",
     accessor: "userReview",
-    id: "reviews",
     Cell: function user({ row }) {
       return (
         <div className="relative justify-evenly w-full max-w-[24rem] flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <p className="inline-flex font-sans text-4xl antialiased font-semibold leading-snug tracking-wide text-gray-900">
+          <p className="inline-flex font-sans text-3xl antialiased font-semibold leading-snug tracking-wide text-gray-900">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -248,7 +269,7 @@ export const COLUMNS = [
             </svg>
             {row.original.userReview}
           </p>
-          <p className="text-stone-500 text-3xl">{row.original.reviewBase}</p>
+          <p className="text-stone-500 text-2xl">{row.original.reviewBase}</p>
           <br />
           <center>
             <button
@@ -262,7 +283,7 @@ export const COLUMNS = [
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="green"
-                className="w-12 h-10"
+                className="w-10 h-8"
               >
                 <path
                   fillRule="evenodd"
@@ -273,7 +294,7 @@ export const COLUMNS = [
 
               {row.original.reviewbtn}
               <svg
-                class="h-9 w-9 text-rose-600"
+                class="h-7 w-9 text-rose-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -296,37 +317,37 @@ export const COLUMNS = [
     Header: "Rankings",
     Footer: "Rankings",
     accessor: "ranking",
-    id: "ranking",
     Cell: function ranking({ row }) {
       return (
         <div className="relative flex justify-evenly w-full max-w-[24rem] flex-col bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <p className="text-gray-900 text-3xl">
+          <p className="text-gray-900 text-2xl">
             {row.original.ranking} - <b>TIMES WEEK</b>
           </p>
           <br />
+          <br />
           <div className="flex -space-x-4 rtl:space-x-reverse">
             <img
-              className="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800"
+              className="w-14 h-13 border-2 border-white rounded-full dark:border-gray-800"
               src="https://preview.redd.it/created-random-people-using-chatgpt-midjourney-do-you-know-v0-q1aa450i5dqb1.png?width=1024&format=png&auto=webp&s=c4e9abc47d193474a2fa1a7e337d9d9340dce947"
               alt=""
             />
             <img
-              className="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800"
+              className="w-14 h-13 border-2 border-white rounded-full dark:border-gray-800"
               src="https://i.stack.imgur.com/5Kgaq.jpg?s=256&g=1"
               alt=""
             />
             <img
-              className="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800"
+              className="w-14 h-13 border-2 border-white rounded-full dark:border-gray-800"
               src="https://images.generated.photos/H82ToIBkQCgmHQKJj_3V6ublzTFpUT3Ph5rluKCG5RE/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTQzNjgyLmpwZw.jpg"
               alt=""
             />
             <img
-              className="w-14 h-14 border-2 border-white rounded-full dark:border-gray-800"
+              className="w-14 h-13 border-2 border-white rounded-full dark:border-gray-800"
               src="https://openexpoeurope.com/wp-content/uploads/2017/05/thomas-person.jpg"
               alt=""
             />
             <a
-              className="flex items-center justify-center w-14 h-14 text-xl font-semibold text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
+              className="flex items-center justify-center w-14 h-13 text-xl font-semibold text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
               href="#"
             >
               +99
