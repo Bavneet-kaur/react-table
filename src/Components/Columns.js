@@ -65,7 +65,7 @@ export const COLUMNS = [
               <li>
                 <a
                   href="#"
-                  className="inline-flex me-4  text-amber-600 md:me-6"
+                  className="inline-flex me-4  text-amber-600 md:me-6 hover:text-indigo-900"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ export const COLUMNS = [
                   id="default-checkbox"
                   type="checkbox"
                   value=""
-                  className="w-8 h-7 border-gray-300 rounded  dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+                  className="w-7 h-6 border-gray-300 rounded  dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label for="default-checkbox" className="ms-1 text-stone-800">
                   Add to Compare
@@ -138,7 +138,7 @@ export const COLUMNS = [
           <br />
           <a
             href="#"
-            className="inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500"
+            className="inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500 hover:text-rose-600"
           >
             <svg
               class="h-7 w-9 text-amber-500"
@@ -223,7 +223,7 @@ export const COLUMNS = [
           <br />
           <a
             href="#"
-            className=" inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500"
+            className=" inline-flex me-4  md:me-6  align-baseline text-xl text-amber-500 hover:text-rose-600"
           >
             <svg
               class="h-7 w-9 text-amber-500"
