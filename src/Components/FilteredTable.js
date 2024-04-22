@@ -21,7 +21,10 @@ function GlobalFilter({
   }, 200);
 
   return (
-    <div className="flex justify-end mb-3">
+    <div className="flex justify-end mb-3 text-wrap">
+      <h1 className="w-full text-2xl text-start font-semibold text-gray-900 bg-white dark:text-white dark:bg-teal-800">
+        {/* Top Colleges/Universities of 2024 */}
+      </h1>
       <input
         onChange={(e) => {
           setValue(e.target.value);
@@ -93,19 +96,17 @@ function FilteredTable() {
     <div className="relative border dark:border-neutral-700">
       {/* <div className="w-full overflow-x-scroll md:overflow-auto  max-w-7xl 2xl:max-w-none mt-2"> */}
 
+      <GlobalFilter
+        preGlobalFilteredRows={preGlobalFilteredRows}
+        globalFilter={state.globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
+
       <table
         className="w-full table-auto  text-left font-inter border-separate border-spacing-y-0"
         {...getTableProps()}
       >
-        <caption className="my-0 text-2xl text-start font-semibold text-gray-900 bg-white dark:text-white dark:bg-teal-800">
-          Top Colleges/Universities of 2024
-          <GlobalFilter
-            preGlobalFilteredRows={preGlobalFilteredRows}
-            globalFilter={state.globalFilter}
-            setGlobalFilter={setGlobalFilter}
-          />
-        </caption>
-        <thead className="text-center text-4xl  bg-teal-600/[6%] rounded-lg text-white font-bold w-full uppercase bg-teal-600 dark:bg-teal-600 dark:text-gray-800">
+        <thead className="text-center text-3xl  bg-teal-600/[6%] rounded-lg text-white font-bold w-full uppercase bg-teal-600 dark:bg-teal-600 dark:text-gray-800">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((columns) => (
