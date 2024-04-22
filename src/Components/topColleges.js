@@ -1,7 +1,7 @@
 const topColleges = [
   {
     id: "#1",
-    thumb: "https://example.com/mit_thumb.jpg",
+    thumb: "https://seeklogo.com/images/M/MIT-logo-73A348B3DB-seeklogo.com.png",
     collegeName: "Massachusetts Institute of Technology (MIT)",
     collegeAddress: "Cambridge, MA, USA",
     feature: true,
@@ -17,7 +17,7 @@ const topColleges = [
   },
   {
     id: "#2",
-    thumb: "https://example.com/caltech_thumb.jpg",
+    thumb: "https://2010.igem.org/wiki/images/5/57/Caltech_logo_watermark.png",
     collegeName: "California Institute of Technology (Caltech)",
     collegeAddress: "Pasadena, CA, USA",
     feature: false,
@@ -33,7 +33,8 @@ const topColleges = [
   },
   {
     id: "#3",
-    thumb: "https://example.com/harvard_thumb.jpg",
+    thumb:
+      "https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/qm5x2rgrgjoj0gz3n2pj",
     collegeName: "Harvard University",
     collegeAddress: "Cambridge, MA, USA",
     feature: false,
@@ -49,7 +50,8 @@ const topColleges = [
   },
   {
     id: "#4",
-    thumb: "https://example.com/stanford_thumb.jpg",
+    thumb:
+      "https://bitcoinproject.files.wordpress.com/2011/06/stanford_seal_256.png",
     collegeName: "Stanford University",
     collegeAddress: "Stanford, CA, USA",
     feature: true,
@@ -65,7 +67,8 @@ const topColleges = [
   },
   {
     id: "#5",
-    thumb: "https://example.com/princeton_thumb.jpg",
+    thumb:
+      "https://trexquant.com/_next/image?url=%2FSchoolLogos%2FPrinceton-Medium.png&w=3840&q=75",
     collegeName: "Princeton University",
     collegeAddress: "Princeton, NJ, USA",
     feature: false,
@@ -81,7 +84,8 @@ const topColleges = [
   },
   {
     id: "#6",
-    thumb: "https://example.com/yale_thumb.jpg",
+    thumb:
+      "https://insights.som.yale.edu/themes/custom/insights/assets/dist/images/favicon-som-256x256.png",
     collegeName: "Yale University",
     collegeAddress: "New Haven, CT, USA",
     feature: false,
@@ -97,7 +101,8 @@ const topColleges = [
   },
   {
     id: "#7",
-    thumb: "https://example.com/chicago_thumb.jpg",
+    thumb:
+      "https://seeklogo.com/images/U/university-of-chicago-logo-0F38E68A5B-seeklogo.com.png",
     collegeName: "University of Chicago",
     collegeAddress: "Chicago, IL, USA",
     feature: false,
@@ -113,7 +118,8 @@ const topColleges = [
   },
   {
     id: "#8",
-    thumb: "https://example.com/columbia_thumb.jpg",
+    thumb:
+      "https://p3.itc.cn/q_70/images03/20220108/92292a3d2033465ab59844fcd3700fb1.png",
     collegeName: "Columbia University",
     collegeAddress: "New York City, NY, USA",
     feature: true,
@@ -130,9 +136,10 @@ const topColleges = [
   },
   {
     id: "#9",
-    thumb: "https://example.com/penn_thumb.jpg",
-    collegeName: "University of Pennsylvania",
-    collegeAddress: "Philadelphia, PA, USA",
+    thumb:
+      "https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/University_of_Texas_at_Austin_seal.svg/1200px-University_of_Texas_at_Austin_seal.svg.png",
+    collegeName: "University of Texas at Austin",
+    collegeAddress: "2515 Speedway, Austin, TX 78712, USA",
     feature: false,
     courseFee: "$93,000",
     subject: "Theology and Religion",
@@ -146,9 +153,9 @@ const topColleges = [
   },
   {
     id: "#10",
-    thumb: "https://example.com/oxford_thumb.jpg",
-    collegeName: "University of Oxford",
-    collegeAddress: "Oxford, England",
+    thumb: "https://ymgrad.com/media/logo/cornell.png",
+    collegeName: " Cornell University",
+    collegeAddress: "Ithaca, NY 14850, United States",
     feature: false,
     subject: "Economics and Management",
     courseFee: "$93,000",

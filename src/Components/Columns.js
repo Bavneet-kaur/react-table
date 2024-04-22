@@ -1,6 +1,6 @@
 export const COLUMNS = [
   {
-    Header: "",
+    Header: "CD RANK",
     Footer: "CD Rank",
     Justify: "center",
     accessor: "id",
@@ -21,21 +21,21 @@ export const COLUMNS = [
     accessor: "collegeName",
     Cell: ({ row }) => {
       return (
-        <div className="relative flex w-full max-w-[80rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+        <div className="relative flex w-full max-w-[96rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
           <div className="relative flex items-center gap-4 pt-0 pb-8 mx-0 md-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-lg bg-clip-border">
             <img
-              src="https://static.thenounproject.com/png/213486-200.png"
+              src={row.original.thumb}
               alt={row.original.collegeName}
-              className="relative inline-block h-[160px] w-[150px]  object-cover object-center"
+              className="relative inline-block h-[100px] w-[100px]  object-cover object-center"
             />
             <div className="flex w-full flex-col gap-0.5">
               <div className="flex items-center justify-between">
-                <h3 className="block font-sans text-4xl antialiased font-bold leading-snug tracking-wide text-teal-600">
+                <h3 className="block font-sans text-3xl antialiased font-bold leading-snug tracking-wide text-teal-600">
                   {row.original.collegeName}
                 </h3>
               </div>
               <div className="inline-flex space-x-48">
-                <p className="font-sans text-2xl antialiased font-extralight leading-normal text-blue-gray-900">
+                <p className="font-sans text-2xl antialiased font-light leading-normal text-blue-gray-900">
                   {row.original.collegeAddress}
                 </p>
                 <span className="flex">
@@ -45,7 +45,7 @@ export const COLUMNS = [
                       className="text-white text-xl bg-rose-500 dark:bg-rose-400 place-items-end cursor-not-allowed font-semibold rounded-lg py-2 px-3 text-center"
                       disabled
                     >
-                      Featured
+                      FEATURED
                     </button>
                   ) : (
                     <span style={{ color: "red" }}></span>
@@ -71,9 +71,9 @@ export const COLUMNS = [
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={2}
+                    strokeWidth={3}
                     stroke="currentColor"
-                    className="w-10 h-10"
+                    className="w-9 h-8"
                   >
                     <path
                       strokeLinecap="round"
@@ -85,23 +85,25 @@ export const COLUMNS = [
                 </a>
               </li>
               <li>
-                <a href="#" className="inline-flex me-4 md:me-6 text-teal-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-9 h-9"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-                    />
-                  </svg>
-                  Download Broucher
-                </a>
+                <span>
+                  <button className="inline-flex me-4 md:me-6 text-teal-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={3}
+                      stroke="currentColor"
+                      className="w-9 h-7"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                      />
+                    </svg>
+                    Download Broucher
+                  </button>
+                </span>
               </li>
               <li>
                 <input
